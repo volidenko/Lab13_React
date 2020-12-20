@@ -8,6 +8,7 @@ import HookBtn from './hookBtn';
 import HookCounter from './HookCounter';
 import ThreeState from './ThreeState';
 import BtnClick from './BtnClick';
+import BtnColor from './BtnColor';
 
 // function App(){
 //   return(
@@ -39,9 +40,12 @@ class App extends React.Component{
         <hr/>
         <HookCounter></HookCounter>
         <hr/>
-        <ThreeState></ThreeState>
-        <hr/>
+        {/* <ThreeState></ThreeState>
+        <hr/> */}
         <BtnClick start={2}></BtnClick>
+        <hr/>
+        <BtnColor></BtnColor>
+        <hr/>
       </div>
     );
   }

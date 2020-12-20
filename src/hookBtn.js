@@ -10,5 +10,5 @@ export default function HookBtn(props){
         setBtnColor("green");
         setTextColor("white");
     }
-    return <button style={{backgroundColor:btnColor, color:textColor, height: "30px"}} onClick={clickHandler}>{btnText}</button>
+    return <button style={{backgroundColor:btnColor, color:textColor, width: "auto"}} onClick={clickHandler}>{btnText}</button>
 }

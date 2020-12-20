@@ -1,28 +1,35 @@
 import React, {useState} from 'react';
 
 export function DisplayColorBox(props){
-    return <div style={{backgroundColor: props.color}}>Hello, React!</div>
+    return <div style={{backgroundColor: props.colorFone, color: props.colorText}}>Hello, React!</div>
+    //return <div style={{backgroundColor: props.colorFone}}>Hello, React!</div>
 }
 
 export function ChangeColorBtn(props){
-    let color=props.btnText.toString().toLowerCase();
+    let colorFone=props.btnText.toString().toLowerCase();
+    const [colorText, setTextColor]=useState("red");
     const clickHandler=()=>{
-        props.btnClickAct(color)
+        props.btnClickAct(colorFone);
+        setTextColor("white");
     }
-    return <button  onClick={clickHandler} style={{backgroundColor:color}}>{props.btnText}</button>
+    return <button  onClick={clickHandler} style={{backgroundColor:colorFone, height: "30px"}}>{props.btnText}</button>
 }
 
 export default function ThreeState(props){
-    const [textColor, setTextColor]=useState("white");
+    const [textFone, setFonColor]=useState("white");
+    const [textColor, setTextColor]=useState("black");
     const changeColor=(newColor)=>{
-        setTextColor(newColor);
+        setFonColor(newColor);
+        setTextColor("white")
     }
     return(
         <>
+        <ChangeColorBtn btnText="Blue" btnClickAct={changeColor}></ChangeColorBtn>
         <ChangeColorBtn btnText="Red" btnClickAct={changeColor}></ChangeColorBtn>
-        <ChangeColorBtn btnText="Yellow" btnClickAct={changeColor}></ChangeColorBtn>
         <ChangeColorBtn btnText="Green" btnClickAct={changeColor}></ChangeColorBtn>
-        <DisplayColorBox color={textColor}></DisplayColorBox>
+        <br/>
+        <br/>
+        <DisplayColorBox colorFone={textFone} colorText={textColor}></DisplayColorBox>
         </>
     )
 }
