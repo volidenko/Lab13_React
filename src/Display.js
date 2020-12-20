@@ -10,8 +10,7 @@ export class CounterBtn extends React.Component {
 }
 
 export class Display extends React.Component {
-    
     render(){
-    return <div > {this.props.dispValue}</div>
+    return <div>{this.props.dispValue}</div>
     }
 }
